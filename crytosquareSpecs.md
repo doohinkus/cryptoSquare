@@ -19,6 +19,11 @@ it will write message into a square if the length is a square root or rectangle 
     [col3, x, x, x, x],
     [col4, x, x, x, x],
     [col5, x, x, x, x],
+    [0][0]
+    [1][0]
+    [2][0]
+
+
     ]---letters [0]is the ROW, letters [0][1] is the COLUMN: ([0][1], [1][1], [2][1], [3][1],[4][1]); ROW: ([0][0],[0][1],[0][2],[0][3],[0][4], [0][5])
   input RECTANGLE: 27
     output: 5 columns 6 rows

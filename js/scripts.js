@@ -7,7 +7,8 @@ var encrypt = function (input){
   var characters = 0;
   var messageLength = messageWithoutPunctuation.length;
   var squareRoot = Math.round(Math.sqrt(messageLength));
-  var letters = [];
+  var lettersGrid = [];
+  var output = [];
 
   // console.log(Math.round(Math.sqrt(messageLength)), " ",messageLength);
   rows = squareRoot;
@@ -18,25 +19,23 @@ var encrypt = function (input){
   }
 
   for (var r = 0; r < rows; r++){
-    letters.push([]);
+    lettersGrid.push([]);
     for (var c = 0; c < columns; c++){
-      letters[r].push(messageWithoutPunctuation.charAt(characters));
+      lettersGrid[r].push(messageWithoutPunctuation.charAt(characters));
       characters++;
-      // console.log(c, " c: ", c);
     }
-
   }
-  console.log(letters)
-
-  // console.log("rows: ", rows, " columns: ", columns);
-  //cols = squareroot
-  //rows = extra space if needed
-  //add extra to rows
-
-  //get square root and round
+for (var col = 0; col < columns; col ++){
+  for (var ro = 0; ro < rows; ro++){
+      output.push(lettersGrid[ro][col]);
+  }
+}
 
 
-  var output = [];
+
+
+
+
 
 }
 
