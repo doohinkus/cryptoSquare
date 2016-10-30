@@ -9,6 +9,7 @@ var encrypt = function (input){
   var squareRoot = Math.round(Math.sqrt(messageLength));
   var lettersGrid = [];
   var output = [];
+  var encryptedMessage = "";
 
   // console.log(Math.round(Math.sqrt(messageLength)), " ",messageLength);
   rows = squareRoot;
@@ -25,16 +26,29 @@ var encrypt = function (input){
       characters++;
     }
   }
-for (var col = 0; col < columns; col ++){
-  for (var ro = 0; ro < rows; ro++){
-      output.push(lettersGrid[ro][col]);
+  for (var col = 0; col < columns; col ++){
+    for (var ro = 0; ro < rows; ro++){
+        output.push(lettersGrid[ro][col]);
+    }
   }
-}
 
+  var timesToLoop = messageWithoutPunctuation.length / 5;
+  for (var y = 0; y<timesToLoop; y++){
+    for (var x = 0; x<5; x++){
+      encryptedMessage += output[x]
+    }
+    encryptedMessage += " : ";
+  }
+// 0 1 2 3 4   5 6 7 8 9  10 11 12 13
+  return encryptedMessage = output.map(function (element, index){
+    console.log("el: ", element, " in: ", index);
+    if (index % 5 === 0 && index !=0){
+      return "  " + element;
+    }
+    return element;
+  });
 
-
-
-
+  // console.log(encryptedMessage);
 
 
 }
@@ -42,7 +56,12 @@ for (var col = 0; col < columns; col ++){
 $(document).ready(function (){
   $("form").submit(function (event){
     var value = $("#input").val();
-    encrypt(value);
+    $("#answer").empty();
+    encrypt(value).forEach(function (letters){
+      $("#answer").append(letters);
+    })
+
+
 
     event.preventDefault();
   });
