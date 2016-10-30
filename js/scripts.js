@@ -4,6 +4,7 @@ var encrypt = function (input){
 
   var rows = 0;
   var columns = 0;
+  var characters = 0;
   var messageLength = messageWithoutPunctuation.length;
   var squareRoot = Math.round(Math.sqrt(messageLength));
   var letters = [];
@@ -19,14 +20,15 @@ var encrypt = function (input){
   for (var r = 0; r < rows; r++){
     letters.push([]);
     for (var c = 0; c < columns; c++){
-      letters[r].push(c);
-      console.log(c, " c: ", c);
+      letters[r].push(messageWithoutPunctuation.charAt(characters));
+      characters++;
+      // console.log(c, " c: ", c);
     }
 
   }
   console.log(letters)
 
-  console.log("rows: ", rows, " columns: ", columns);
+  // console.log("rows: ", rows, " columns: ", columns);
   //cols = squareroot
   //rows = extra space if needed
   //add extra to rows
