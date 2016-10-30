@@ -1,4 +1,15 @@
-@import url('https://fonts.googleapis.com/css?family=VT323');
+@import url('https://fonts.googleapis.com/css?family=Orbitron');
+
 body{
-  font-family: 'VT323', monospace;
+  font-family: 'Orbitron', sans-serif;
+  background-image: url(../img/background.jpg);
+}
+.btn{
+  margin-top: 1em;
+}
+.well{
+  padding: 3em;
+}
+#answer{
+  display: none;
 }

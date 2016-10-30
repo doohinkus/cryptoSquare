@@ -11,10 +11,9 @@ var encrypt = function (input){
   var output = [];
   var encryptedMessage = "";
 
-  // console.log(Math.round(Math.sqrt(messageLength)), " ",messageLength);
   rows = squareRoot;
   columns = squareRoot;
-  // console.log((squareRoot * squareRoot));
+
   if (messageLength > (squareRoot * squareRoot)){
       columns = squareRoot + 1;
   }
@@ -39,16 +38,13 @@ var encrypt = function (input){
     }
     encryptedMessage += " : ";
   }
-// 0 1 2 3 4   5 6 7 8 9  10 11 12 13
+
   return encryptedMessage = output.map(function (element, index){
-    console.log("el: ", element, " in: ", index);
     if (index % 5 === 0 && index !=0){
       return "  " + element;
     }
     return element;
   });
-
-  // console.log(encryptedMessage);
 
 
 }
@@ -59,9 +55,8 @@ $(document).ready(function (){
     $("#answer").empty();
     encrypt(value).forEach(function (letters){
       $("#answer").append(letters);
-    })
-
-
+    });
+    $("#answer").fadeOut().fadeIn();
 
     event.preventDefault();
   });
